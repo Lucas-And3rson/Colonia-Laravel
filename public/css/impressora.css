@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+/*------------------ Listagem de Clientes ------------------*/
+#accordionSidebar{
+    display: none;
+}
+.card__acoes{
+  display: none;
+}
+.card{
+    width: 100vw;
+    height: 358px;
+    top: 2px;
+    border-radius: 0px;
+
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0px;
+
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+}
+
+.card__left {
+    display: flex;
+    width: 50%;
+    border-right: solid 1px #000;
+}
+
+.card__left > img {
+    width: 90px;
+    height: 90px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.card__left > .informacoes > .pix > img {
+  position: absolute;
+  right: 60px;
+  bottom: 60px;
+  justify-content: right;
+  width: 110px;
+  height: 110px;
+}
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.card__right {
+  display: flex;
+  width: 50%;
+}
+
+.card__right > img {
+  width: 90px;
+  height: 90px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.card__right > .informacoes > .pix > img {
+position: absolute;
+right: 60px;
+bottom: 60px;
+justify-content: right;
+width: 110px;
+height: 110px;
+}
+
+.informacoes{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}

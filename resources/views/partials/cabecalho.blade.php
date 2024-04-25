@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $pageTitle ?? '' }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+</head>
+<body>
+    <header id="header" aria-label="Abrir header">
+        <img id="logo" src="{{ asset('img/Logo-Colonia (2).png') }}" alt="Logo">
+        <nav id="nav">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <li class="item-menu"><a href="/">INÍCIO</a></li>
+                <li class="item-menu"><a href="/eventos">EVENTOS</a></li>
+                <li class="item-menu"><a href="/sobre">SOBRE</a></li>
+            </ul>
+        </nav>
+        <button class="btn-contato">
+            <a href="#" data-toggle="modal" data-target="#contatoModal">
+                CONTATO
+            </a>
+        </button>
+    </header>
+
+    <!-- Your content goes here -->
+
+    <script src="{{ asset('/js/cabecalho.js') }}"></script>
+</body>
+</html>
