@@ -103,6 +103,9 @@ body{
   margin: 60px;
   width: 70%;
 }
+.card__left__capa{
+  width: 40%;
+}
 .card__left__capa img{
   border: solid 1px #8ed5f1;
 }
