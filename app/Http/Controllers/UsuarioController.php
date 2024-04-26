@@ -8,7 +8,7 @@ use App\Models\UsuarioModel;
 
 class UsuarioController extends Controller{
 
-    public static function cadastrar($req, $res) {
+    public static function cadastrar($req) {
         if ($req->input('_id') == '') { // cadastrar
             $user = UsuarioModel::where('email', $req->input('email'))->first();
             if ($user != null) {
@@ -46,19 +46,19 @@ class UsuarioController extends Controller{
         }
     }
 
-    public static function relatorio($req, $res) {
+    public static function relatorio($req) {
         $status = $req->query('s');
         $VUsuarios = UsuarioModel::all();
         return view('usuario.relatorio', compact('VUsuarios', 'status'));
     }
 
-    public static function detalhar($req, $res) {
+    public static function detalhar($req) {
         $id = $req->route('id');
         $u = UsuarioModel::find($id);
         return view('usuario.detalhar', compact('u'));
     }
 
-    public static function cadastrarRender($req, $res) {
+    public static function cadastrarRender($req) {
         $status = $req->query('s');
         $usuarioUpdate = [
             'nome' => $req->query('nome'),
@@ -68,7 +68,7 @@ class UsuarioController extends Controller{
         return view('usuario.cadastrar', compact('usuarioUpdate', 'status'));
     }
 
-    public static function checkLogin($req, $res) {
+    public static function checkLogin($req) {
         $user = UsuarioModel::where('email', $req->input('email'))->first();
         if ($user != null) {
             if (Hash::check($req->input('senha'), $user->senha)) { // email e senha válidos
@@ -82,21 +82,18 @@ class UsuarioController extends Controller{
         }
     }
 
-    public static function loginRender($req, $res) {
+    public static function loginRender($req) {
         $status = $req->query('s');
-        $usuarioLogado = [
-            'email' => $req->query('email')
-        ];
-        return view('usuario.login', compact('usuarioLogado', 'status'));
+        return view('usuario.login', compact('status'));
     }
 
-    public static function deletar($req, $res) {
+    public static function deletar($req) {
         $id = $req->route('id');
         UsuarioModel::destroy($id);
         return redirect()->route('usuarios.index', ['s' => 2]);
     }
 
-    public static function atualizar($req, $res) {
+    public static function atualizar($req) {
         $status = $req->query('s');
         $id = $req->route('id');
         $usuarioUpdate = UsuarioModel::find($id);

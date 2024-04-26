@@ -30,7 +30,7 @@
     <section class="flex">
       <div>
         <h3>Sobre a Colônia</h3>
-        <p></p>
+        <p>Em desenvolvimento</p>
       </div>
       <div>
         <img src="img/Logo-Colonia (2).png" alt="logo">

@@ -361,8 +361,8 @@ a{
   margin-bottom: 20px;
 }
 .card{
-    width: 95%;
-    height: 258px;
+    width: 98%;
+    height: 280px;
     top: 50px;
     border-radius: 5px;
 
@@ -390,17 +390,56 @@ a{
     padding: 5px;
     border-radius: 50%;
 }
-div.card__right > .informacoes > .pix > img {
-  position: absolute;
-  right: 70px;
-  bottom:70px;
-  width: 120px;
-  height: 120px;
+.card__capa{
+    width: 95%;
+    height: 258px;
+    top: 50px;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+    min-width: 270px;
+    margin-bottom: 40px;
+    background-color: #073d66;
+
+    transition: transform .8s;
 }
-div.card__right > .informacoes > .pix > span {
-  position: absolute;
-  right: 40px;
-  bottom: -35px;
+.card__left__capa > img {
+  padding: 5px;
+  width: 100%;
+}
+.card__left__capa {
+  display: flex;
+  width: 39%;
+}
+.card__right__capa {
+  display: flex;
+  margin: 20px;
+  width: 70%;
+}
+div.card__right__capa > .informacoes > .pix{
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+div.card__right__capa > .informacoes > .pix > .nome__capa{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  width: 300px;
+  height: 20px;
+  border-top: solid 1px #000;
+}
+div.card__right__capa > .informacoes > .pix > .mini-pix{
+  display: flex;
+  margin: auto;
+  margin-left: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+div.card__right__capa > .informacoes > .pix > .mini-pix > img {
   width: 100px;
   height: 100px;
 }
