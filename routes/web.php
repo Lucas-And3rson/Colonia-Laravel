@@ -3,6 +3,40 @@
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ClienteController;
 
+// Rota para a página inicial
+Route::get('/', function () {
+    return view('index');
+});
+
+// Rota para a página de eventos
+Route::get('/eventos', function () {
+    return view('eventos');
+});
+
+// Rota para a página "sobre"
+Route::get('/sobre', function () {
+    return view('sobre');
+});
+
+// Rota para o hub admin
+Route::get('/hub', function () {
+    if (session('usuario') != null) {
+        return view('hub.admin');
+    } else {
+        return redirect('/usuarios/login');
+    }
+});
+
+// Rota para logout
+Route::get('/logout', function () {
+    session(['usuario' => null]);
+    return redirect('/usuarios/login');
+});
+
+Route::fallback(function () {
+    return view('erro.404');
+});
+
 // Rotas para Usuários
 Route::get('/usuarios', [UsuarioController::class, 'relatorio'])->middleware(['auth', 'usuarioSuperAdmin']);
 Route::get('/usuario/{id}', [UsuarioController::class, 'detalhar'])->middleware(['auth', 'usuarioSuperAdmin']);

@@ -1,8 +1,13 @@
 <?php
-use App\Models\UsuarioModel;
-use Illuminate\Support\Facades\Hash;
 
-class UsuarioController {
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Models\UsuarioModel;
+
+class UsuarioController extends Controller{
+
     public static function cadastrar($req, $res) {
         if ($req->input('_id') == '') { // cadastrar
             $user = UsuarioModel::where('email', $req->input('email'))->first();
@@ -98,4 +103,3 @@ class UsuarioController {
         return view('usuario.cadastrar', compact('usuarioUpdate', 'status'));
     }
 }
-?>

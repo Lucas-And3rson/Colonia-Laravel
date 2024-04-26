@@ -1,8 +1,11 @@
 <?php
 
-use App\Models\ClienteModel;
+namespace App\Http\Controllers;
 
-class ClienteController {
+use App\Models\ClienteModel;
+use Illuminate\Http\Request;
+
+class ClienteController extends Controller {
     public static function cadastrar($req, $res) {
         if ($req->input('_id') == '') { // cadastrar
             $cliente = ClienteModel::where('cpf', $req->input('cpf'))->first();
@@ -81,4 +84,3 @@ class ClienteController {
         return view('cliente.cadastrar', compact('clienteUpdate', 'status'));
     }
 }
-?>

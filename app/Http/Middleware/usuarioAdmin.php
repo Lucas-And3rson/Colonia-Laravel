@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class usuarioAdmin
 {
-    public function handle($request, Closure $next)
+    public function usuarioAdmin($request, Closure $next)
     {
         try {
             $user = UsuarioModel::where('email', $request->session()->get('usuario'))->first();

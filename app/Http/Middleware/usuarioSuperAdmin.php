@@ -10,7 +10,7 @@ require_once("../models/UsuarioModel.php");
 class usuarioSuperAdmin
 {
     // FUNÇÃO NÃO PEGA ASYNC
-     function nivel($req, $res, $next) {
+     function usuarioSuperAdmin($req, $res, $next) {
         try {
             $user =  UsuarioModel::findOne(array("email" => $_SESSION["usuario"]));
             if ($user && $user["nivel"] === 3) {
