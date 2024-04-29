@@ -21,22 +21,22 @@
                 <h1>Login</h1>
                 <p>Acesse aqui sua conta.</p>
                 <form  action="/usuarios/login" method="POST">
-                    @if($status == 5)
+                    @if($stats == 5)
                         <div class="existe">
                             Email inválido!
                         </div>
                     @endif
-                    <div class="campo"  @if($status == 5) style = "background-color: rgb(230, 65, 65); border: 2px solid rgb(230, 65, 65);" @endif>
+                    <div class="campo"  @if($stats == 5) style = "background-color: rgb(230, 65, 65); border: 2px solid rgb(230, 65, 65);" @endif>
                         <i class="material-symbols-outlined">mail</i>
                         <input type="email" name="email" id="email" value="{{ $usuarioLogado->email }}" placeholder="Seu email" required>
                         <label for="email">Email</label>
                     </div>
-                    @if($status == 6)
+                    @if($stats == 6)
                         <div class="existe">
                             Senha inválida!
                         </div>
                     @endif
-                    <div class="campo"  @if($status == 6) style = "background-color: rgb(230, 65, 65); border: 2px solid rgb(230, 65, 65);" @endif>
+                    <div class="campo"  @if($stats == 6) style = "background-color: rgb(230, 65, 65); border: 2px solid rgb(230, 65, 65);" @endif>
                         <i class="material-symbols-outlined">visibility</i>
                         <input type="password" name="senha" id="senha" placeholder="Sua senha" min-length="8" required >
                         <label for="senha">Senha</label>

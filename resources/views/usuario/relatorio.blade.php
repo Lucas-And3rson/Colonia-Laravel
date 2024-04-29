@@ -49,17 +49,17 @@
                             <h6 class="m-0 font-weight-bold text-primary">Usuários</h6>
                         </div>
                         <div class="card-body">
-                            @if($status == 1)
+                            @if($stats == 1)
                             <div class="editado-alert">
                                 Usuário Cadastrado!
                             </div>
                             @endif
-                            @if($status == 2)
+                            @if($stats == 2)
                             <div class="deletado-alert">
                                 Usuário removido com sucesso!
                             </div>
                             @endif
-                            @if($status == 3)
+                            @if($stats == 3)
                             <div class="editado-alert">
                                 Usuário editado com sucesso!
                             </div>

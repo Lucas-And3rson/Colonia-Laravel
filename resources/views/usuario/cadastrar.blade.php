@@ -69,12 +69,12 @@ Here's the Blade template version of the provided HTML code:
                                                                 <input class="input-claro" type="text" name="nome" id="nome" value="{{ $usuarioUpdate->nome }}" placeholder="Colônia de Pescadores" required>
                                                                 <label for="nome">Nome</label>
                                                             </div>
-                                                            @if($status == 4)
+                                                            @if($stats == 4)
                                                             <div class="existe">
                                                                 Esse email já existe!
                                                             </div>
                                                             @endif
-                                                            <div class="campo"  @if($status == 4) style = "background-color: rgb(230, 65, 65); border: 2px solid rgb(230, 65, 65);" @endif>
+                                                            <div class="campo"  @if($stats == 4) style = "background-color: rgb(230, 65, 65); border: 2px solid rgb(230, 65, 65);" @endif>
                                                                 <input class="input-claro" type="email" name="email" id="email" value="{{ $usuarioUpdate->email }}" placeholder="colonia@gmail.com" required>
                                                                 <label for="email">Email</label>
                                                             </div>
